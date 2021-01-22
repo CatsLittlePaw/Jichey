@@ -231,11 +231,11 @@
 
         
         //送往綠界
-        /*
+        
         var testobj = new Object();
         
         testobj.MerchantID = '2000132';
-        testobj.MerchantTradeNo = 'jzavtv1793410sa31536';
+        testobj.MerchantTradeNo = 'jzavtv1793410sa31537';
         testobj.MerchantTradeDate = '2020/10/12 15:30:23';
         testobj.PaymentType = 'aio';
         testobj.TotalAmount = 1999;
@@ -246,7 +246,7 @@
         testobj.EncryptType = 1;
 
         var tobj = new Object();
-        tobj.encstring = 'HashKey=5294y06JbISpM5x9&ChoosePayment=Credit&EncryptType=1&ItemName=Apple 7 手機殼&MerchantID=2000132&MerchantTradeDate=2020/10/12 15:30:23&MerchantTradeNo=jzavtv1793410sa31536&PaymentType=aio&ReturnURL=https://ecpay1021.herokuapp.com/Home/Index&TotalAmount=1999&TradeDesc=促銷大使&HashIV=v77hoKGq4kWxNNIS';
+        tobj.encstring = 'HashKey=5294y06JbISpM5x9&ChoosePayment=Credit&EncryptType=1&ItemName=Apple 7 手機殼&MerchantID=2000132&MerchantTradeDate=2020/10/12 15:30:23&MerchantTradeNo=jzavtv1793410sa31537&PaymentType=aio&ReturnURL=https://ecpay1021.herokuapp.com/Home/Index&TotalAmount=1999&TradeDesc=促銷大使&HashIV=v77hoKGq4kWxNNIS';
         var ttobj = { Json: JSON.stringify(tobj) };
         var encstring = Common_ConvertObject_ws({ cn: 'Order', sn: 'GetShaString', sd: JSON.stringify(ttobj) });
 
@@ -264,7 +264,7 @@
             }
         });
         
-        */
+        
         
         
         var objSend = { Json: JSON.stringify(obj) };
