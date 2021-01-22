@@ -237,19 +237,21 @@
         var hashkey = 'HashKey=5294y06JbISpM5x9';
         var hashiv = 'HashIV=v77hoKGq4kWxNNIS';
 
+        var rnd = Common_Guid_ECPAY();
+
         testobj.MerchantID = '2000132';
-        testobj.MerchantTradeNo = 'jzavtv1793410sa88788';
+        testobj.MerchantTradeNo = rnd;
         testobj.MerchantTradeDate = '2020/10/12 15:30:23';
         testobj.PaymentType = 'aio';
         testobj.TotalAmount = 1999;
         testobj.TradeDesc = '促銷大使';
         testobj.ItemName = 'Apple 7 手機殼';
-        testobj.ReturnURL = 'https://ecpay1021.herokuapp.com/Home/Index';
+        testobj.ReturnURL = 'https://130.211.241.28/Jichey/Mall/RtnPage';
         testobj.ChoosePayment = 'Credit';
         testobj.EncryptType = 1;
 
         var tobj = new Object();
-        tobj.encstring = hashkey + '&ChoosePayment=' + testobj.ChoosePayment + '&EncryptType=1&ItemName=' + testobj.ItemName + '&MerchantID=2000132&MerchantTradeDate=2020/10/12 15:30:23&MerchantTradeNo=' + testobj.MerchantTradeNo + '&PaymentType=aio&ReturnURL=https://ecpay1021.herokuapp.com/Home/Index&TotalAmount=1999&TradeDesc=促銷大使&HashIV=' + hashiv;
+        tobj.encstring = hashkey + '&ChoosePayment=' + testobj.ChoosePayment + '&EncryptType=1&ItemName=' + testobj.ItemName + '&MerchantID=2000132&MerchantTradeDate=2020/10/12 15:30:23&MerchantTradeNo=' + testobj.MerchantTradeNo + '&PaymentType=aio&ReturnURL=' + testobj.ReturnURL + '&TotalAmount=1999&TradeDesc=促銷大使&' + hashiv;
         var ttobj = { Json: JSON.stringify(tobj) };
         var encstring = Common_ConvertObject_ws({ cn: 'Order', sn: 'GetShaString', sd: JSON.stringify(ttobj) });
 
@@ -268,7 +270,7 @@
         });
         
         
-        /*
+        
         
         var objSend = { Json: JSON.stringify(obj) };
         var CodeDef = Common_ConvertObject_ws({ cn: 'Order', sn: 'Create', sd: JSON.stringify(objSend) });
@@ -302,8 +304,7 @@
         else {
             Common_Notice(CodeDef.Message);
         }
-
-        */
+        
     }
 
     var DeleteCarCart = function (ID) {

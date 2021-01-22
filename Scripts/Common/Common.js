@@ -110,6 +110,26 @@ function Common_Guid(mode) {
             return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
         });
 }
+
+function Common_Guid_ECPAY(mode) {
+    var d = Date.now();
+    if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
+        d += performance.now(); //use high-precision timer if available
+    }
+    if (mode == 1) {
+        return 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = (d + Math.random() * 16) % 16 | 0;
+            d = Math.floor(d / 16);
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+    }
+    else
+        return 'xxxxxxxx4xxxyxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = (d + Math.random() * 16) % 16 | 0;
+            d = Math.floor(d / 16);
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+}
 /**
  * 抓取Element底下的輸入元件(input、select、checkbox…等)，透過各元件name屬性
  * @param {any} element
